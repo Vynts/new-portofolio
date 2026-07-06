@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Alvinza Erza</title><link>https://erza.site/</link><description>Recent content on Alvinza Erza</description><generator>Hugo</generator><language>id-id</language><lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0700</lastBuildDate><atom:link href="https://erza.site/index.xml" rel="self" type="application/rss+xml"/><item><title>About Me</title><link>https://erza.site/about/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0700</pubDate><guid>https://erza.site/about/</guid><description>&lt;h3 id="halo-saya-alvinza-erza"&gt;Halo, saya Alvinza Erza.&lt;/h3&gt;
+&lt;p&gt;Saya adalah seorang &lt;strong&gt;Junior Backend Developer &amp;amp; Cloud Enthusiast&lt;/strong&gt; yang berbasis di Lampung, Indonesia. Saya memiliki ketertarikan mendalam pada pengembangan sistem yang efisien menggunakan &lt;strong&gt;Python&lt;/strong&gt; dan framework &lt;strong&gt;Flask&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Selain &lt;em&gt;coding&lt;/em&gt;, saya sangat antusias dengan dunia &lt;strong&gt;Cloud Infrastructure&lt;/strong&gt; (khususnya AWS) dan &lt;strong&gt;Linux System Administration&lt;/strong&gt;. Fokus utama saya adalah membangun aplikasi yang tidak hanya fungsional, tetapi juga memiliki arsitektur yang &lt;em&gt;scalable&lt;/em&gt; dan aman.&lt;/p&gt;
+&lt;h4 id="tech-stack--skillset"&gt;Tech Stack &amp;amp; Skillset:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Backend:&lt;/strong&gt; Python, Flask, MySQL.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure:&lt;/strong&gt; AWS (EC2, S3, RDS), Linux (Ubuntu/Debian).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Networking:&lt;/strong&gt; MikroTik, Routing, &amp;amp; Network Configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="pengalaman--project"&gt;Pengalaman &amp;amp; Project:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nocsphere:&lt;/strong&gt; Aplikasi manajemen Billing Mikrotik untuk bisnis RT/RW Net berbasis FastAPI, Next.js &amp;amp; MySQL.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edupay:&lt;/strong&gt; Aplikasi manajemen transaksi sekolah berbasis Flask &amp;amp; MySQL.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LKS Cloud Computing:&lt;/strong&gt; Finalist 2025 National Level.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Belajar di CV. FR-System:&lt;/strong&gt; Mendalami pengembangan backend dan pengelolaan server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Saya selalu terbuka untuk berdiskusi tentang teknologi, &lt;em&gt;backend architecture&lt;/em&gt;, atau hal teknis lainnya. Mari terhubung!&lt;/p&gt;</description></item><item><title>Membangun Edupay: Automasi Pembayaran Sekolah dengan Python &amp; Flask</title><link>https://erza.site/projects/edupay/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0700</pubDate><guid>https://erza.site/projects/edupay/</guid><description>&lt;p&gt;Sebagai seorang &lt;em&gt;backend developer&lt;/em&gt;, salah satu tantangan yang paling menarik adalah mengotomatisasi proses manual yang memakan waktu. &lt;strong&gt;Edupay&lt;/strong&gt; adalah proyek yang saya bangun untuk menjawab masalah efisiensi manajemen transaksi di lingkungan sekolah.&lt;/p&gt;
+&lt;h3 id="mengapa-flask"&gt;Mengapa Flask?&lt;/h3&gt;
+&lt;p&gt;Dalam pengembangan Edupay, saya memilih &lt;strong&gt;Flask&lt;/strong&gt; karena fleksibilitasnya yang tinggi. Framework ini memungkinkan saya untuk membangun struktur &lt;em&gt;backend&lt;/em&gt; yang ringan namun tetap &lt;em&gt;scalable&lt;/em&gt; sesuai kebutuhan aplikasi manajemen sekolah.&lt;/p&gt;
+&lt;h3 id="tantangan-teknis--solusi"&gt;Tantangan Teknis &amp;amp; Solusi&lt;/h3&gt;
+&lt;p&gt;Selama proses pengembangan, saya menemui beberapa tantangan teknis:&lt;/p&gt;</description></item></channel></rss>
