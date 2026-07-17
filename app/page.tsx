@@ -58,19 +58,33 @@ export default function Home() {
             <Link href="/posts" className="text-xs sm:text-sm text-[#58a6ff] hover:underline">Lihat semua &rarr;</Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {latestPosts.length > 0 ? (
               latestPosts.map((post: any) => (
-                <Link key={post.slug} href={`/posts/${post.slug}`} className="group p-5 sm:p-6 bg-[#161b22] rounded-xl border border-[#30363d] hover:border-[#58a6ff]/60 transition-all">
-                  <div className="flex justify-between items-start gap-4 mb-3">
-                    <span className="text-xs text-[#8b949e]">{post.date}</span>
+                <Link 
+                  key={post.slug} 
+                  href={`/posts/${post.slug}`} 
+                  className="group flex flex-col justify-between p-5 sm:p-6 bg-[#161b22] rounded-xl border border-[#30363d] hover:border-[#58a6ff]/60 transition-all h-full"
+                >
+                  <div className="space-y-2.5">
+                    <span className="text-xs text-[#8b949e] block">
+                      {post.date}
+                    </span>
+                    
+                    <h3 className="text-base font-bold text-white group-hover:text-[#58a6ff] transition-colors leading-snug line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-sm text-[#8b949e] line-clamp-2 leading-relaxed text-justify min-h-[40px]">
+                      {post.description}
+                    </p>
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-[#58a6ff] transition-colors mb-2">{post.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#8b949e] line-clamp-2">{post.description}</p>
                 </Link>
               ))
             ) : (
-              <p className="text-[#8b949e]">Belum ada tulisan terbaru.</p>
+              <div className="col-span-1 sm:col-span-2 p-8 text-center text-[#8b949e] text-sm bg-[#161b22] border border-[#30363d] rounded-xl">
+                Belum ada tulisan terbaru.
+              </div>
             )}
           </div>
         </section>
