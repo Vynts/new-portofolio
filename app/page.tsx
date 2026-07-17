@@ -18,7 +18,7 @@ export default function Home() {
                 Alvinza Erza Farandhika
               </h1>
               <p className="text-base sm:text-lg text-[#58a6ff] font-medium tracking-wide">
-                Junior Backend Developer | Cloud Enthusiast
+                Junior Backend Developer | Cloud Computing Enthusiast
               </p>
             </div>
             
