@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#0d1117] text-[#c9d1d9] px-4 sm:px-6 py-12 sm:py-16 selection:bg-[#58a6ff]/30 selection:text-white">
-      <div className="max-w-5xl mx-auto space-y-16 sm:space-y-24 px-4">
+      <div className="max-w-5xl mx-auto space-y-16 sm:space-y-24">
         
         {/* Hero Section */}
         <section className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center justify-between">

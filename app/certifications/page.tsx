@@ -120,7 +120,7 @@ export default function CertificationsPage() {
 
   return (
     <div className="w-full min-h-screen bg-[#0d1117] text-[#c9d1d9] py-10 sm:py-16 selection:bg-[#58a6ff]/30 selection:text-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
+      <div className="max-w-5xl mx-auto sm:px-6 space-y-8 sm:space-y-12">
         
         {/* Header & Tabs */}
         <div className="space-y-6 sm:space-y-8">

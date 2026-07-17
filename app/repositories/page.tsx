@@ -92,7 +92,7 @@ export default function RepositoriesPage() {
 
   return (
     <div className="w-full min-h-screen bg-[#0d1117] text-[#c9d1d9] py-6 sm:py-12 selection:bg-[#58a6ff]/30 selection:text-white">
-      <div className="max-w-5xl mx-auto space-y-6 px-4">
+      <div className="max-w-5xl mx-auto space-y-6">
         
         {/* Header & Stats Card */}
         <div className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 sm:p-8">

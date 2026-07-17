@@ -5,7 +5,7 @@ import React from 'react';
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#c9d1d9] py-6 sm:py-12 px-4 sm:px-6 lg:px-8 selection:bg-[#58a6ff]/30 selection:text-white">
-      <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-8">
         
         {/* Navigation Sidebar: Sidebar di Desktop, Horizontal Scroll Bar di Mobile */}
         <aside className="print:hidden">
