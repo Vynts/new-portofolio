@@ -19,43 +19,45 @@ export default function PostsClient({ initialPosts }: { initialPosts: PostData[]
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#0d1117] text-[#c9d1d9] py-6 sm:py-12 selection:bg-[#58a6ff]/30 selection:text-white">
+    <div className="w-full min-h-screen bg-[#0d1117] text-[#c9d1d9] py-6 sm:py-12 px-4 selection:bg-[#58a6ff]/30 selection:text-white">
       <div className="max-w-5xl mx-auto space-y-6">
         
+        {/* Header Section */}
         <div className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div className="space-y-1">
               <h1 className="text-xl sm:text-2xl font-bold text-[#f0f6fc] tracking-tight">Posts</h1>
-              <p className="text-xs sm:text-sm text-[#58a6ff]">Berbagi catatan, dokumentasi, dan pembelajaran teknologi</p>
+              <p className="text-sm text-[#58a6ff]">Berbagi catatan, dokumentasi, dan pembelajaran teknologi</p>
             </div>
             
             <div className="bg-[#21262d] border border-[#30363d] px-4 py-2 rounded-lg text-center h-fit w-full sm:w-auto shrink-0">
-              <span className="text-[10px] sm:text-xs text-[#8b949e] block uppercase tracking-wider">Total Posts</span>
-              <span className="text-base sm:text-lg font-bold text-[#f0f6fc]">{initialPosts.length}</span>
+              <span className="text-xs text-[#8b949e] block uppercase tracking-wider">Total Posts</span>
+              <span className="text-lg font-bold text-[#f0f6fc]">{initialPosts.length}</span>
             </div>
           </div>
         </div>
 
+        {/* Posts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {currentItems.length > 0 ? (
             currentItems.map((post) => (
               <Link
                 key={post.slug}
                 href={`/posts/${post.slug}`}
-                className="group flex flex-col justify-between bg-[#161b22] border border-[#30363d] hover:border-[#444c56] rounded-xl p-5 sm:p-6 transition-colors h-full"
+                className="group flex flex-col justify-between bg-[#161b22] border border-[#30363d] hover:border-[#444c56] rounded-xl p-5 sm:p-6 transition-all h-full"
               >
                 <div className="space-y-2.5">
-                  <span className="text-[11px] sm:text-xs text-[#8b949e] block">
+                  <span className="text-xs text-[#8b949e] block">
                     {post.date ? new Date(post.date).toLocaleDateString('id-ID', {
                       day: 'numeric', month: 'long', year: 'numeric'
                     }) : ''}
                   </span>
 
-                  <h2 className="text-sm sm:text-base font-bold text-[#f0f6fc] group-hover:text-[#58a6ff] transition-colors line-clamp-2 leading-snug">
+                  <h2 className="text-base font-bold text-[#f0f6fc] group-hover:text-[#58a6ff] transition-colors line-clamp-2 leading-snug">
                     {post.title}
                   </h2> 
 
-                  <p className="text-xs sm:text-sm text-[#8b949e] line-clamp-2 min-h-[36px] sm:min-h-[40px] leading-relaxed text-justify">
+                  <p className="text-sm text-[#8b949e] line-clamp-2 min-h-[40px] leading-relaxed text-justify">
                     {post.description}
                   </p>
                 </div>
@@ -65,7 +67,7 @@ export default function PostsClient({ initialPosts }: { initialPosts: PostData[]
                     {post.tags.map((tag) => (
                       <span 
                         key={tag} 
-                        className="font-semibold text-white bg-[#21262d] border border-[#30363d] px-2 py-0.5 rounded text-[10px] sm:text-[11px] tracking-wide"
+                        className="font-semibold text-white bg-[#21262d] border border-[#30363d] px-2.5 py-0.5 rounded text-xs tracking-wide"
                       >
                         {tag}
                       </span>
@@ -81,22 +83,23 @@ export default function PostsClient({ initialPosts }: { initialPosts: PostData[]
           )}
         </div>
 
+        {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8 pt-6 border-t border-[#30363d]/50">
             <button
               onClick={() => paginate(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-3 py-2 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#58a6ff] hover:bg-[#30363d] disabled:opacity-30 transition-colors text-xs sm:text-sm font-medium"
+              className="px-4 py-2 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#58a6ff] hover:bg-[#30363d] disabled:opacity-30 transition-colors text-sm font-medium"
             >
               Prev
             </button>
 
-            <div className="flex items-center gap-1 overflow-x-auto max-w-[180px] xs:max-w-none scrollbar-none">
+            <div className="flex items-center gap-1 overflow-x-auto max-w-[200px] sm:max-w-none scrollbar-none">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
                 <button
                   key={pageNumber}
                   onClick={() => paginate(pageNumber)}
-                  className={`w-8 h-8 sm:w-9 sm:h-9 shrink-0 rounded-lg border text-xs sm:text-sm font-semibold transition-colors ${
+                  className={`w-9 h-9 shrink-0 rounded-lg border text-sm font-semibold transition-colors ${
                     currentPage === pageNumber
                       ? "bg-[#58a6ff]/10 border-[#58a6ff] text-[#58a6ff]"
                       : "bg-[#21262d] border-[#30363d] text-[#8b949e] hover:text-white hover:bg-[#30363d]"
@@ -110,7 +113,7 @@ export default function PostsClient({ initialPosts }: { initialPosts: PostData[]
             <button
               onClick={() => paginate(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-3 py-2 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#58a6ff] hover:bg-[#30363d] disabled:opacity-30 transition-colors text-xs sm:text-sm font-medium"
+              className="px-4 py-2 rounded-lg bg-[#21262d] border border-[#30363d] text-[#8b949e] hover:text-[#58a6ff] hover:bg-[#30363d] disabled:opacity-30 transition-colors text-sm font-medium"
             >
               Next
             </button>

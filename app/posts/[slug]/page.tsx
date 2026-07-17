@@ -13,7 +13,6 @@ interface PostProps {
   }>;
 }
 
-// Fungsi wajib untuk Static Export (memberitahu Next.js semua slug yang ada)
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
   return posts.map((post) => ({
@@ -21,7 +20,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Konfigurasi parser marked
 marked.setOptions({
   gfm: true,
   breaks: true,
@@ -92,7 +90,7 @@ export default async function PostDetailPage({ params }: PostProps) {
             <h1 className="text-xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
               {post.meta.title}
             </h1>
-            <p className="text-xs sm:text-base text-[#8b949e] italic leading-relaxed">
+            <p className="text-sm sm:text-base text-[#8b949e] italic leading-relaxed">
               {post.meta.description}
             </p>
           </div>
@@ -100,14 +98,15 @@ export default async function PostDetailPage({ params }: PostProps) {
           <div 
             className="prose prose-invert max-w-none text-[#c9d1d9] break-words
               prose-headings:text-[#f0f6fc] prose-headings:font-bold
-              [&_p]:my-6 [&_p]:leading-relaxed [&_p]:text-xs sm:[&_p]:text-base [&_p]:text-[#c9d1d9]/90
-              [&_h2]:text-lg sm:[&_h2]:text-2xl [&_h2]:mt-12 [&_h2]:mb-6
-              [&_h3]:text-base sm:[&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-4
+              [&_p]:my-5 [&_p]:leading-relaxed [&_p]:text-sm sm:[&_p]:text-base [&_p]:text-[#c9d1d9]/90
+              [&_h2]:text-xl sm:[&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4
+              [&_h3]:text-lg sm:[&_h3]:text-lg [&_h3]:mt-6 [&_h3]:mb-3
               prose-a:text-[#58a6ff] prose-a:no-underline hover:prose-a:underline
-              prose-code:text-[#f0f6fc] prose-code:bg-[#21262d] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-[11px] sm:prose-code:text-xs
-              prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-[#30363d] prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto
-              prose-ol:list-decimal prose-ol:pl-5 prose-ul:list-disc prose-ul:pl-5
-              prose-blockquote:border-l-4 prose-blockquote:border-[#30363d] prose-blockquote:pl-4 prose-blockquote:italic"
+              prose-code:text-[#f0f6fc] prose-code:bg-[#21262d] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-xs
+              prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-[#30363d] prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:text-xs sm:prose-pre:text-sm
+              prose-ol:list-decimal prose-ol:pl-5 prose-ol:my-4 prose-ol:space-y-2
+              prose-ul:list-disc prose-ul:pl-5 prose-ul:my-4 prose-ul:space-y-2
+              prose-blockquote:border-l-4 prose-blockquote:border-[#30363d] prose-blockquote:pl-4 prose-blockquote:my-4 prose-blockquote:italic"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
