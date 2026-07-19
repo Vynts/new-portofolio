@@ -98,16 +98,16 @@ export default function RepositoriesPage() {
         <div className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div className="space-y-1">
-              <h1 className="text-xl sm:text-2xl font-bold text-[#f0f6fc] tracking-tight">Repositories</h1>
-              <p className="text-sm text-[#58a6ff]">Daftar proyek open-source asli di GitHub @vynts</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-[#f0f6fc] tracking-tight notranslate">Repositories</h1>
+              <p className="text-sm text-[#58a6ff]">Daftar proyek di GitHub @vynts</p>
             </div>
             
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <div className="flex-1 sm:flex-initial bg-[#21262d] border border-[#30363d] px-4 py-2 rounded-lg text-center">
-                <span className="text-xs text-[#8b949e] block uppercase tracking-wider">Total Repos</span>
+                <span className="text-xs text-[#8b949e] block uppercase tracking-wider notranslate">Total Repositories</span>
                 <span className="text-lg font-bold text-[#f0f6fc]">{repos.length}</span>
               </div>
-              <a href="https://github.com/vynts" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-[#21262d] hover:bg-[#30363d] text-[#58a6ff] rounded-lg transition-colors border border-[#30363d] text-sm font-medium">
+              <a href="https://github.com/vynts" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-[#21262d] hover:bg-[#30363d] text-[#58a6ff] rounded-lg transition-colors border border-[#30363d] text-sm font-medium notranslate">
                 Profile
               </a>
             </div>

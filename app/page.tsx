@@ -17,13 +17,13 @@ export default function Home() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
                 Alvinza Erza Farandhika
               </h1>
-              <p className="text-base sm:text-lg text-[#58a6ff] font-medium tracking-wide">
+              <p className="text-base sm:text-lg text-[#58a6ff] font-medium tracking-wide notranslate">
                 Junior Backend Developer | Cloud Computing Enthusiast
               </p>
             </div>
             
             <p className="leading-relaxed text-[#8b949e] text-sm sm:text-base max-w-2xl mx-auto md:mx-0">
-              Halo, saya Alvinza — seorang Backend Developer yang antusias dalam membangun aplikasi web yang kokoh dan efesien.
+              Halo, saya Erza, seorang Backend Developer yang antusias dalam membangun aplikasi web yang kokoh dan efesien.
               <br/><br/>
               Berfokus pada Python, saya mendalami pengembangan web serta perancangan arsitektur database relasional. Saya juga memiliki ketertarikan kuat di bidang infrastruktur cloud dan senang mempelajari bagaimana sistem backend terintegrasi dengan lingkungan penyebaran modern.
             </p>
@@ -59,7 +59,7 @@ export default function Home() {
         {/* Latest Posts Section */}
         <section className="space-y-6">
           <div className="flex justify-between items-center border-[#30363d] pb-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white">Latest Posts</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">Postingan Terbaru</h2>
             <Link href="/posts" className="text-xs sm:text-sm text-[#58a6ff] hover:underline">Lihat semua &rarr;</Link>
           </div>
 

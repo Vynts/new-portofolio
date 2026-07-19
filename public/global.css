@@ -1,0 +1,35 @@
+/* ===================================================
+   CSS AGRESIF UNTUK MENYEMBUNYIKAN TOTAL BAR GOOGLE
+   =================================================== */
+
+/* 1. Sembunyikan semua jenis frame banner bawaan Google Translate */
+iframe[class*="goog-te-banner-frame"],
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* 2. Paksa elemen HTML & Body agar tidak bergeser kebawah akibat padding otomatis */
+html {
+    padding-top: 0px !important;
+    position: static !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+/* 3. Sembunyikan highlight warna (kuning/biru) bawaan Google setelah teks diterjemahkan */
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+}

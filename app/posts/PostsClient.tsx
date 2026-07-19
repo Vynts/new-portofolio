@@ -26,12 +26,12 @@ export default function PostsClient({ initialPosts }: { initialPosts: PostData[]
         <div className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div className="space-y-1">
-              <h1 className="text-xl sm:text-2xl font-bold text-[#f0f6fc] tracking-tight">Posts</h1>
+              <h1 className="text-xl sm:text-2xl font-bold text-[#f0f6fc] tracking-tight">Postingan</h1>
               <p className="text-sm text-[#58a6ff]">Berbagi catatan, dokumentasi, dan pembelajaran teknologi</p>
             </div>
             
             <div className="bg-[#21262d] border border-[#30363d] px-4 py-2 rounded-lg text-center h-fit w-full sm:w-auto shrink-0">
-              <span className="text-xs text-[#8b949e] block uppercase tracking-wider">Total Posts</span>
+              <span className="text-xs text-[#8b949e] block uppercase tracking-wider notranslate">Total Posts</span>
               <span className="text-lg font-bold text-[#f0f6fc]">{initialPosts.length}</span>
             </div>
           </div>
