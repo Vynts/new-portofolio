@@ -26,26 +26,22 @@ export default function GoogleTranslator() {
       document.body.appendChild(addScript);
     }
 
-    // --- LOGIKA MENGUBAH TEKS & MENYEMBUNYIKAN DUPLIKAT YANG AMAN ---
+    // --- LOGIKA MENGUBAH TEKS & MENYEMBUNYIKAN DUPLIKAT SECARA RINGAN ---
     const paksaTeksBahasa = () => {
       const selectEl = document.querySelector(".goog-te-combo");
       if (selectEl) {
         const options = selectEl.querySelectorAll("option");
-        
-        // Cek apakah opsi default (value "") saat ini sedang ada di DOM
         const adaOpsiKosong = Array.from(options).some(opt => opt.value === "");
 
         options.forEach((opt) => {
           // 1. Ubah teks opsi default (value "") menjadi ID
           if (opt.value === "") {
             opt.textContent = "ID";
-            opt.style.display = "block"; // Selalu tampilkan jika ada
+            opt.style.display = "block";
           }
           // 2. Kunci teks Indonesia asli menjadi ID
           else if (opt.value === "id") {
             opt.textContent = "ID";
-            // HANYA sembunyikan opsi "id" jika opsi default "" ada (mencegah duplikat).
-            // Jika opsi default "" hilang (seperti saat posisi ENG), pastikan "id" TETAP MUNCUL.
             opt.style.display = adaOpsiKosong ? "none" : "block";
           }
           // 3. Kunci teks Inggris menjadi ENG
@@ -57,7 +53,7 @@ export default function GoogleTranslator() {
       }
     };
 
-    // Pengawas global untuk menghapus bar putih atas
+    // Pengawas global hanya untuk menghapus bar putih atas Google
     const globalObserver = new MutationObserver(() => {
       const googleIframe = document.querySelector(".goog-te-banner-frame");
       if (googleIframe) googleIframe.remove();
@@ -68,24 +64,19 @@ export default function GoogleTranslator() {
       paksaTeksBahasa();
     });
 
-    // Pengawas khusus isi dropdown menggunakan delay macro-task (setTimeout)
-    // agar Google selesai memproses perpindahan bahasa sebelum teksnya dikunci kembali.
-    const selectObserver = new MutationObserver(() => {
-      setTimeout(paksaTeksBahasa, 0);
-    });
-
     globalObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["style"] });
     globalObserver.observe(document.body, { childList: true, attributes: true, attributeFilter: ["style"] });
 
-    // Cek berkala sampai element dropdown selesai di-render di DOM
+    // Cek berkala sampai element dropdown selesai di-render di DOM awal
     const intervalCheck = setInterval(() => {
       const selectEl = document.querySelector(".goog-te-combo");
       if (selectEl) {
         paksaTeksBahasa();
-        selectObserver.observe(selectEl, { childList: true, characterData: true, subtree: true });
         
-        // Jaring pengaman saat interaksi klik manual bolak-balik
-        selectEl.addEventListener("change", () => setTimeout(paksaTeksBahasa, 0));
+        // Pemicu berbasis interaksi (sangat ringan untuk HP, anti infinite-loop)
+        selectEl.addEventListener("change", () => setTimeout(paksaTeksBahasa, 20));
+        selectEl.addEventListener("click", paksaTeksBahasa);
+        selectEl.addEventListener("focus", paksaTeksBahasa);
         
         clearInterval(intervalCheck);
       }
@@ -93,8 +84,14 @@ export default function GoogleTranslator() {
 
     return () => {
       globalObserver.disconnect();
-      selectObserver.disconnect();
       clearInterval(intervalCheck);
+      
+      const selectEl = document.querySelector(".goog-te-combo");
+      if (selectEl) {
+        selectEl.removeEventListener("change", paksaTeksBahasa);
+        selectEl.removeEventListener("click", paksaTeksBahasa);
+        selectEl.removeEventListener("focus", paksaTeksBahasa);
+      }
     };
   }, []);
 
